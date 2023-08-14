@@ -16,7 +16,7 @@ export default async function categoriesComp() {
             <h1 className="text-black text-3xl font-bold py-5 uppercase">Categories</h1>
             <div className="flex flex-wrap bg-gray-100 p-5 ">
                 {categories.map((category) => (
-                    <Link key={category} href={"category/" + category}>
+                    // <Link key={category} href={"category/" + category}>
                         <div key={category}
                             className="flex flex-row justify-center items-center h-auto px-5  bg-white m-2 p-2 border border-x-gray-100 rounded-md shadow-sm hover:shadow-md">
                             {/* <img src={product.image} alt="" className="h-64 mx-auto" /> */}
@@ -31,7 +31,7 @@ export default async function categoriesComp() {
                             </svg>
                             <p className="mx-2 text-black text-base font-medium uppercase">{category}</p>
                         </div>
-                    </Link>
+                    // </Link>
                 ))}
             </div>
         </>

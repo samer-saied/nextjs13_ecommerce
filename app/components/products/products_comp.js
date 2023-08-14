@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -11,7 +12,7 @@ export default function productsComp({products}) {
                     <Link key={product.id} href={"products/" + product.id}>
                         <div key={product.id}
                             className=" relative h-auto px-5  bg-white m-2 p-2 border border-x-gray-100 rounded-md hover:-translate-y-3 hover:shadow-lg duration-100 ease-in">
-                            <img src={product.image} alt="" className="h-64 mx-auto" />
+                            <Image width={200} height={100} src={product.image} alt="" className="h-64 mx-auto" />
                             <div className=" absolute -right-5 -top-5 bg-red-600 rounded-full w-16 h-16 text-white font-bold flex justify-center items-center ">
                                 <p className="text-md font-bold">{product.price}</p>
                                 <p className="text-md font-light">$</p>

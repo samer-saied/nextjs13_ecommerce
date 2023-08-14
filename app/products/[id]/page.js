@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRouter } from 'next/navigation'
 
 async function getOneProduct(productNo) {
@@ -10,7 +11,7 @@ async function getOneProduct(productNo) {
 
 
 
-export default async function SingleProductPage(params) {
+export default function SingleProductPage(params) {
     const router = useRouter()
 
 
@@ -18,7 +19,8 @@ export default async function SingleProductPage(params) {
         router.push('/products')
     }
 
-    const product = await getOneProduct(params.params.id)
+    let product = []
+    getOneProduct(params.params.id).then((value) => product = value)
     return (
         <>
             <div onClick={clickHandle} className="mt-5 w-16 h-10 bg-red-600 rounded-md flex flex-col justify-center items-center cursor-pointer hover:shadow-md hover:border-black hover:border">
@@ -30,7 +32,7 @@ export default async function SingleProductPage(params) {
                 className=" relative h-auto px-5  bg-white m-2 p-2 border border-x-gray-100 rounded-md">
                 <h1 className="text-black text-3xl font-bold py-5 uppercase">{product.title}</h1>
 
-                <img src={product.image} alt="" className="h-64 mx-auto" />
+                <Image width={200} height={100} src={product.image} alt="" className="h-64 mx-auto" />
 
                 <div className="w-full flex flex-row justify-between items-center">
                     <p className="text-black text-lg font-medium line-clamp-2 w-8/12">{product.title}</p>

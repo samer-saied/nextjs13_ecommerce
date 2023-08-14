@@ -1,0 +1,4 @@
+Next.js, React.js, Ecommerce, connect to fakeApi, 2pages (single product page + Home page with products and categories)
+
+Created By Samer Saied
+www.samersaied.site
